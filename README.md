@@ -11,6 +11,11 @@ A unified, interactive interview preparation workspace covering:
 ## SQL Preparation Tracker
 
 To run the interactive SQL Tracker locally:
-1. Navigate to the `SQL/` directory.
-2. Double click `start_tracker.bat` (or open `index.html`).
-3. Ticking checkboxes and editing notes automatically persists changes to `questions.json`.
+- **Windows**: Double-click `start_tracker.bat` inside the `SQL/` directory (or open `index.html`).
+- **Linux / macOS**:
+  ```bash
+  cd SQL
+  chmod +x start_tracker.sh
+  ./start_tracker.sh
+  ```
+- **Live Persistence**: Ticking checkboxes, bookmarking stars, and writing notes automatically persists all changes to `questions.json`.
