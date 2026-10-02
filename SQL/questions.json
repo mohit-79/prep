@@ -5,7 +5,7 @@
     "category": "Select",
     "difficulty": "Easy",
     "url": "https://leetcode.com/problems/recyclable-and-low-fat-products/",
-    "completed": false,
+    "completed": true,
     "solution": "-- 1757. Recyclable and Low Fat Products\nSELECT product_id\nFROM Products\nWHERE low_fats = 'Y' AND recyclable = 'Y';",
     "notes": "Simple WHERE clause filter with logical AND."
   },
@@ -15,7 +15,7 @@
     "category": "Select",
     "difficulty": "Easy",
     "url": "https://leetcode.com/problems/find-customer-referee/",
-    "completed": false,
+    "completed": true,
     "solution": "-- 584. Find Customer Referee\nSELECT name\nFROM Customer\nWHERE referee_id != 2 OR referee_id IS NULL;\n\n-- Alternative:\n-- SELECT name FROM Customer WHERE IFNULL(referee_id, 0) != 2;",
     "notes": "Trap: SQL three-valued logic. 'referee_id != 2' eliminates NULL values. Must check IS NULL or IFNULL."
   },
@@ -25,7 +25,7 @@
     "category": "Select",
     "difficulty": "Easy",
     "url": "https://leetcode.com/problems/big-countries/",
-    "completed": false,
+    "completed": true,
     "solution": "-- 595. Big Countries\nSELECT name, population, area\nFROM World\nWHERE area >= 3000000 OR population >= 25000000;",
     "notes": "Straightforward OR condition."
   },
@@ -35,7 +35,7 @@
     "category": "Select",
     "difficulty": "Easy",
     "url": "https://leetcode.com/problems/article-views-i/",
-    "completed": false,
+    "completed": true,
     "solution": "-- 1148. Article Views I\nSELECT DISTINCT author_id AS id\nFROM Views\nWHERE author_id = viewer_id\nORDER BY id ASC;",
     "notes": "Use DISTINCT to remove duplicate views; sort ascending."
   },
@@ -45,7 +45,7 @@
     "category": "Select",
     "difficulty": "Easy",
     "url": "https://leetcode.com/problems/invalid-tweets/",
-    "completed": false,
+    "completed": true,
     "solution": "-- 1683. Invalid Tweets\nSELECT tweet_id\nFROM Tweets\nWHERE LENGTH(content) > 15;",
     "notes": "LENGTH() counts bytes; CHAR_LENGTH() counts characters."
   },
@@ -55,7 +55,7 @@
     "category": "Basic Joins",
     "difficulty": "Easy",
     "url": "https://leetcode.com/problems/replace-employee-id-with-the-unique-identifier/",
-    "completed": false,
+    "completed": true,
     "solution": "-- 1378. Replace Employee ID With The Unique Identifier\nSELECT eu.unique_id, e.name\nFROM Employees e\nLEFT JOIN EmployeeUNI eu ON e.id = eu.id;",
     "notes": "LEFT JOIN keeps all employees even if they don't have a unique identifier."
   },
@@ -65,7 +65,7 @@
     "category": "Basic Joins",
     "difficulty": "Easy",
     "url": "https://leetcode.com/problems/product-sales-analysis-i/",
-    "completed": false,
+    "completed": true,
     "solution": "-- 1068. Product Sales Analysis I\nSELECT p.product_name, s.year, s.price\nFROM Sales s\nJOIN Product p ON s.product_id = p.product_id;",
     "notes": "Simple INNER JOIN on product_id."
   },
@@ -75,7 +75,7 @@
     "category": "Basic Joins",
     "difficulty": "Easy",
     "url": "https://leetcode.com/problems/customer-who-visited-but-did-not-make-any-transactions/",
-    "completed": false,
+    "completed": true,
     "solution": "-- 1581. Customer Who Visited but Did Not Make Any Transactions\nSELECT v.customer_id, COUNT(v.visit_id) AS count_no_trans\nFROM Visits v\nLEFT JOIN Transactions t ON v.visit_id = t.visit_id\nWHERE t.transaction_id IS NULL\nGROUP BY v.customer_id;",
     "notes": "Classic Anti-Join: LEFT JOIN + WHERE right_table.key IS NULL."
   },
@@ -85,7 +85,7 @@
     "category": "Basic Joins",
     "difficulty": "Easy",
     "url": "https://leetcode.com/problems/rising-temperature/",
-    "completed": false,
+    "completed": true,
     "solution": "-- 197. Rising Temperature\nSELECT w1.id\nFROM Weather w1\nJOIN Weather w2 ON DATEDIFF(w1.recordDate, w2.recordDate) = 1\nWHERE w1.temperature > w2.temperature;",
     "notes": "Do NOT use id = id - 1. Dates are not always strictly consecutive IDs; use DATEDIFF() = 1."
   },
